@@ -1,0 +1,58 @@
+<div *ngIf="isLoading" class="loading">
+    <mat-spinner></mat-spinner>
+  </div>
+  
+  <div *ngIf="error">
+    <mat-card class="error-card">{{ error }}</mat-card>
+  </div>
+  
+  <mat-card *ngIf="mission" class="mission-detail-card">
+    <div class="top-bar">
+      <h2>{{ mission.mission_name }} <span>#{{ mission.flight_number }}</span></h2>
+      <button mat-button routerLink="/">⬅ Back</button>
+    </div>
+  
+    <div class="info-layout">
+      <!-- Patch -->
+      <div class="patch">
+        <img [src]="mission.links.mission_patch_small" alt="Mission Patch" />
+      </div>
+  
+      <!-- Info Table -->
+      <div class="info">
+        <table>
+          <tr>
+            <td><strong>Launch Year:</strong></td>
+            <td>{{ mission.launch_year }}</td>
+          </tr>
+          <tr>
+            <td><strong>Rocket:</strong></td>
+            <td>{{ mission.rocket.rocket_name }} ({{ mission.rocket.rocket_type }})</td>
+          </tr>
+          <tr>
+            <td><strong>Launch Site:</strong></td>
+            <td>{{ mission.launch_site.site_name_long }}</td>
+          </tr>
+          <tr>
+            <td><strong>Success:</strong></td>
+            <td>
+              <span *ngIf="mission.launch_success">✅ Yes</span>
+              <span *ngIf="!mission.launch_success">❌ No</span>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Details:</strong></td>
+            <td>{{ mission.details || 'No details available.' }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  
+    <!-- External Links -->
+    <div class="links">
+      <a *ngIf="mission.links.wikipedia" mat-button color="primary" [href]="mission.links.wikipedia" target="_blank">Wikipedia</a>
+      <a *ngIf="mission.links.article_link" mat-button color="accent" [href]="mission.links.article_link" target="_blank">Article</a>
+      <a *ngIf="mission.links.video_link" mat-button color="warn" [href]="mission.links.video_link" target="_blank">Video</a>
+    </div>
+  </mat-card>
+  

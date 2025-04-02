@@ -1,0 +1,125 @@
+.dashboard-header {
+  text-align: center;
+  background: #fff;
+  color: #111;
+  padding: 24px 0;
+  margin-bottom: 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.dashboard-layout {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+}
+
+.sidebar {
+  width: 200px;
+  background: #f9f9f9;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar h2 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.mission-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.mission-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.horizontal-card {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  padding: 16px;
+  background-color: #ffffff;
+  color: #111;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.patch-wrapper img {
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.mission-info {
+  flex: 1;
+  font-size: 14px;
+
+  h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .flight {
+    font-size: 13px;
+    font-weight: 400;
+    color: #666;
+  }
+
+  table {
+    width: 100%;
+
+    td {
+      padding: 4px 8px;
+    }
+
+    td:first-child {
+      font-weight: bold;
+      color: #555;
+      white-space: nowrap;
+      width: 120px;
+    }
+  }
+}
+
+.mission-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  align-items: flex-end;
+
+  a {
+    font-size: 13px;
+    font-weight: 600;
+    text-align: right;
+    white-space: nowrap;
+  }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  padding: 60px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  padding: 24px;
+}

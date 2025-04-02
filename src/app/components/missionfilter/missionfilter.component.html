@@ -1,0 +1,12 @@
+<div class="year-button-group">
+    <button mat-button (click)="selectYear('')">All</button>
+    <button
+      mat-raised-button
+      color="primary"
+      *ngFor="let year of years"
+      (click)="selectYear(year)"
+    >
+      {{ year }}
+    </button>
+  </div>
+  

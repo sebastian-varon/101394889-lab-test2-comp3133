@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+// STEP 1: Define theme tokens
+$theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$blue-palette,
+    tertiary: mat.$blue-palette, // replaces accent
+  )
+));
+
+// STEP 2: Apply theme styles within a CSS selector
+html {
+  @include mat.all-component-themes($theme);
+}
+
+// STEP 3: (Optional) base body styling
+body {
+  background-color: #f5f7fa;
+  color: #111;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+}

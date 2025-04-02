@@ -1,0 +1,54 @@
+<header class="dashboard-header">
+  <h1>SpaceX Launch Explorer</h1>
+</header>
+
+<div class="dashboard-layout">
+  <!-- Sidebar with filter -->
+  <aside class="sidebar">
+    <h2>Filter by Year</h2>
+    <app-missionfilter (yearSelected)="filterByYear($event)"></app-missionfilter>
+  </aside>
+
+  <!-- Main Content -->
+  <section class="mission-content">
+    <div *ngIf="isLoading" class="loading">
+      <mat-spinner></mat-spinner>
+    </div>
+
+    <div *ngIf="error" class="error">
+      <mat-card>{{ error }}</mat-card>
+    </div>
+
+    <div class="mission-list" *ngIf="!isLoading && missions.length">
+      <mat-card *ngFor="let mission of missions" class="mission-card horizontal-card" [routerLink]="['/mission', mission.flight_number]">
+        <div class="patch-wrapper">
+          <img [src]="mission.links.mission_patch_small" alt="Mission Patch" />
+        </div>
+
+        <div class="mission-info">
+          <h3>{{ mission.mission_name }} <span class="flight">#{{ mission.flight_number }}</span></h3>
+          <table>
+            <tr>
+              <td><strong>Launch Year:</strong></td>
+              <td>{{ mission.launch_year }}</td>
+            </tr>
+            <tr>
+              <td><strong>Details:</strong></td>
+              <td>{{ mission.details || 'No details available.' }}</td>
+            </tr>
+            <tr>
+              <td><strong>Rocket:</strong></td>
+              <td>{{ mission.rocket.rocket_name }} ({{ mission.rocket.rocket_type }})</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="mission-links">
+          <a *ngIf="mission.links.wikipedia" mat-button color="primary" [href]="mission.links.wikipedia" target="_blank">Wikipedia</a>
+          <a *ngIf="mission.links.article_link" mat-button color="accent" [href]="mission.links.article_link" target="_blank">Article</a>
+          <a *ngIf="mission.links.video_link" mat-button color="warn" [href]="mission.links.video_link" target="_blank">Video</a>
+        </div>
+      </mat-card>
+    </div>
+  </section>
+</div>
