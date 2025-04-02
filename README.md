@@ -33,16 +33,19 @@ Built as part of COMP3133 Lab Test 2 by **Student ID: 101394889**
   - Rocket info
   - Details
   - External links: Wikipedia / Video / Article
+<img width="1398" alt="Screenshot 2025-04-02 at 15 07 30" src="https://github.com/user-attachments/assets/619c6871-3575-4189-a8ba-d77caae707f7" />
 
 ### ✅ Filter by Launch Year
 - Sidebar filter to show missions by year
 - “All” resets the filter
+<img width="1398" alt="Screenshot 2025-04-02 at 15 07 56" src="https://github.com/user-attachments/assets/8c8548c1-78c4-4b41-800f-d3ae6df6d388" />
 
 ### ✅ Mission Details View
 - Click a mission to open `/mission/:id`
 - Displays detailed mission information
 - Full layout with image, success status, rocket, launch site & more
 - Easy back navigation
+<img width="1398" alt="Screenshot 2025-04-02 at 15 08 02" src="https://github.com/user-attachments/assets/9a207ce1-dd23-478c-bcd0-3a8bc771b3a2" />
 
 ---
 
